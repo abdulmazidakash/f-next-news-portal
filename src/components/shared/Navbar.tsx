@@ -1,14 +1,17 @@
+"use client"
 import Link from 'next/link'
 import React from 'react'
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '../ui/navigation-menu'
 import { Switch } from '../ui/switch'
 import { Button } from '../ui/button'
 import { AiOutlineMenu } from 'react-icons/ai'
+import { usePathname } from 'next/navigation'
 
 export const Navbar = () => {
+	 const pathname = usePathname()
   return (
 	<header className='py-4 shadow-md'>
-		<nav className='max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8 flex justify-between items-center'>
+		<nav className='max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8 flex justify-between items-center font-semibold'>
 			{/* logo */}
 			<div className='text-xl font-bold'>
 				<Link href={'/'}>Daily News</Link>
@@ -17,7 +20,7 @@ export const Navbar = () => {
 			<NavigationMenu className='hidden lg:flex'>
 			<NavigationMenuList>
 				<NavigationMenuItem className='flex items-center space-x-8'>
-					<NavigationMenuLink className='hover:text-red-500' href='/news'>News</NavigationMenuLink>
+					<NavigationMenuLink className={`${pathname === '/news'? 'text-red-500 font-semibold' : 'hover:text-red-500'}`} href='/news'>News</NavigationMenuLink>
 					<NavigationMenuLink className='hover:text-red-500' href='services'>
 					
 					<NavigationMenuTrigger>Services</NavigationMenuTrigger>
@@ -32,8 +35,8 @@ export const Navbar = () => {
 						
 					</NavigationMenuContent>
 					</NavigationMenuLink>
-					<NavigationMenuLink className='hover:text-red-500' href='/about'>About</NavigationMenuLink>
-					<NavigationMenuLink className='hover:text-red-500' href='/contact'>Contact</NavigationMenuLink>
+					<NavigationMenuLink className={`${pathname === '/about'? 'text-red-500 font-semibold' : 'hover:text-red-500'}`} href='/about'>About</NavigationMenuLink>
+					<NavigationMenuLink className={`${pathname === '/contact'? 'text-red-500 font-semibold' : 'hover:text-red-500'}`} href='/contact'>Contact</NavigationMenuLink>
 					
 				</NavigationMenuItem>
 			</NavigationMenuList>
