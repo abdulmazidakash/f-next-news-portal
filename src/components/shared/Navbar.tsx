@@ -1,14 +1,15 @@
 "use client"
 import Link from 'next/link'
-import React from 'react'
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '../ui/navigation-menu'
 import { Switch } from '../ui/switch'
 import { Button } from '../ui/button'
-import { AiOutlineMenu } from 'react-icons/ai'
+
 import { usePathname } from 'next/navigation'
+import MobileMenu from './MobileMenu'
 
 export const Navbar = () => {
-	 const pathname = usePathname()
+	 const pathname = usePathname();
+
   return (
 	<header className='py-4 shadow-md'>
 		<nav className='max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8 flex justify-between items-center font-semibold'>
@@ -54,9 +55,8 @@ export const Navbar = () => {
 			</div>
 
 			{/* mobile hamburger menu  */}
-			<div className='lg:hidden'>
-				<Button variant={'outline'}><AiOutlineMenu size={24} /></Button>
-			</div>
+			<MobileMenu/>
+			
 		</nav>
 	</header>
   )
