@@ -5,7 +5,7 @@ export const fetchNews = async(category: string='', search: string= '') =>{
 			throw new Error(`HTTP error! status: ${response.status}`)
 		}
 		const data = await response.json();
-		return data;
+		return data.categories;
 
 	}catch(error){
 		console.error('error fetching news data--->', error);

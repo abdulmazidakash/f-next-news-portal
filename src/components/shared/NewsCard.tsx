@@ -12,7 +12,7 @@ const NewsCard = ({ item }: NewsCardProps) => {
       <Link href={`/news/${item?.idCategory}`}>
         <Image
           src={item?.strCategoryThumb}
-        
+        priority
           width={500}
           height={360}
           alt="City skyline"
