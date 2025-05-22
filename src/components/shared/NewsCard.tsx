@@ -2,13 +2,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { Button } from '../ui/button'
+import { NewsCardProps, NewsItem } from '@/types/news'
 
 //   src="https://images.unsplash.com/photo-1747134392520-e3181e0bc399?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 
-const NewsCard = ({ item }: any) => {
+const NewsCard = ({ item }: NewsCardProps) => {
   return (
     <div className="border p-4 rounded-md shadow-md">
-      <Link href="/">
+      <Link href={`/news/${item?.idCategory}`}>
         <Image
           src={item?.strCategoryThumb}
         
@@ -19,8 +20,8 @@ const NewsCard = ({ item }: any) => {
         />
       </Link>
 	  <div>
-		<h2 className="text-xl font-semibold my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, totam!</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, inventore. Dolorem ipsam animi ea vel doloremque illo placeat debitis fugiat?</p>
+		<h2 className="text-xl font-semibold my-3">{item?.strCategory}</h2>
+          <p className='text-justify mb-2'>{item?.strCategoryDescription.substring(0, 200)}...</p>
           <Link href={'/'}>
             <Button variant={'default'}>Read More</Button>
           </Link>
