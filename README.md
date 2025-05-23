@@ -23,15 +23,33 @@ A modern and responsive news portal built with **Next.js 15**, **React 19**, **T
 
 ```bash
 next-news-portal/
-├── components/        # Reusable UI components
-├── pages/             # Next.js pages (routes)
-├── public/            # Static files
-├── styles/            # Global styles (e.g., Tailwind)
-├── utils/             # Utility functions
-├── types/             # TypeScript types
-├── eslint.config.mjs  # ESLint configuration
-├── next.config.ts     # Next.js configuration
-└── tailwind.config.ts # TailwindCSS configuration
+├── .next/                  # Next.js build output
+├── node_modules/           # Project dependencies
+├── public/                 # Static public assets
+├── src/                    # Source files
+│   ├── app/                # App directory (Next.js 13+)
+│   │   ├── about/          # About page route
+│   │   ├── contact/        # Contact page route
+│   │   ├── news/           # News page route
+│   │   │   └── page.tsx    # News route page
+│   │   ├── favicon.ico     # Favicon
+│   │   ├── globals.css     # Global CSS
+│   │   ├── layout.tsx      # Root layout
+│   │   └── page.tsx        # Root route
+│   ├── assets/             # Custom assets (e.g., images, icons)
+│   ├── components/         # Reusable UI components
+│   ├── context/            # React context providers
+│   ├── lib/                # Helper libraries/functions
+│   └── types/              # TypeScript types
+├── .gitignore              # Git ignored files
+├── components.json         # (Optional) Component config
+├── eslint.config.mjs       # ESLint configuration
+├── image.png               # Project banner/image
+├── next-env.d.ts           # Next.js type declarations
+├── next.config.ts          # Next.js configuration
+├── package.json            # Project metadata and dependencies
+├── pnpm-lock.yaml          # Dependency lock file (pnpm)
+tailwind.config.ts # TailwindCSS configuration
 ```
 
 ---
