@@ -1,185 +1,137 @@
+### ✅ `README.md`
 
----
+```md
+# 📰 Next News Portal
 
-```markdown
-# Next News Portal
-
-A modern, responsive news portal built with **Next.js**, **React 19**, **Tailwind CSS**, and **Radix UI**. This portal provides a structured layout with reusable components for presenting and navigating news content.
-
----
-
-## 📑 Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Folder Structure](#folder-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Dependencies](#dependencies)
-- [Configuration](#configuration)
-- [Examples](#examples)
-- [Troubleshooting](#troubleshooting)
-- [Contributors](#contributors)
-- [License](#license)
-
----
-
-## 📘 Introduction
-
-The **Next News Portal** is designed to be a scalable and customizable news publishing platform using the latest frontend technologies. It leverages server-side rendering and API routes from Next.js for efficient and fast content delivery.
+A modern and responsive news portal built with **Next.js 15**, **React 19**, **Tailwind CSS 4**, and **Radix UI**. This project showcases a clean and interactive user interface for delivering breaking news, articles, and more.
 
 ---
 
 ## 🚀 Features
 
-- ⚡ Built with **Next.js 15**
-- 💄 UI powered by **Tailwind CSS** and **Radix UI**
-- 🔄 Server-side rendering and routing
-- 🧩 Modular component-based architecture
-- 📱 Responsive and mobile-friendly layout
-- 📰 News fetching logic with `fetchNews.ts`
+- ⚡️ Built with Next.js 15 using **Turbopack** for fast development
+- 🎨 Styled using **Tailwind CSS 4** with animation support via `tw-animate-css`
+- 🧩 Modular and reusable UI components with **Radix UI**
+- 📱 Fully responsive design for mobile, tablet, and desktop
+- 🌙 Light & Dark theme support (optional)
+- 📡 Remote image loading support (e.g. Unsplash, TheMealDB)
+- ✅ ESLint and TypeScript support for maintainable code
 
 ---
 
-## 📁 Folder Structure
+## 📂 Folder Structure (Example)
 
 ```
 
-src/
-├── app/
-│   ├── about/
-│   ├── contact/
-│   └── news/
-├── assets/                 # Static assets
-├── components/
-│   ├── news/
-│   └── shared/
-│       ├── Banner.tsx
-│       ├── Footer.tsx
-│       ├── MobileMenu.tsx
-│       ├── Navbar.tsx
-│       ├── NewsCard.tsx
-│       └── NewsLetter.tsx
-├── context/               # React context logic
-├── lib/
-│   └── fetchNews.ts       # News fetching utility
-├── ui/                    # UI components
-├── layout.tsx
-├── page.tsx
-├── globals.css
+next-news-portal/
+│
+├── components/        # Reusable UI components
+├── pages/             # Next.js pages (routes)
+├── public/            # Static files
+├── styles/            # Global styles (e.g., Tailwind)
+├── utils/             # Utility functions
+├── types/             # TypeScript types
+├── eslint.config.mjs  # ESLint configuration
+├── next.config.ts     # Next.js configuration
+└── tailwind.config.ts # TailwindCSS configuration
 
 ````
 
 ---
 
-## 🛠️ Installation
+## 🛠️ Tech Stack
 
-Ensure you have **Node.js >= 18** installed.
+| Name                      | Description                                      |
+| ------------------------- | ------------------------------------------------ |
+| **Next.js 15**            | React framework for production apps             |
+| **React 19**              | Core UI library                                 |
+| **Tailwind CSS 4**        | Utility-first CSS framework                     |
+| **Radix UI**              | Accessible, composable UI primitives            |
+| **Lucide Icons**          | Icon set built for React                        |
+| **ESLint + TypeScript**   | Code quality and type safety                    |
+
+---
+
+## 📦 Installation
+
+Make sure you have **Node.js (v18 or higher)** and **pnpm / npm / yarn** installed.
 
 ```bash
 git clone https://github.com/your-username/next-news-portal.git
 cd next-news-portal
-npm install
+pnpm install # or npm install or yarn
 ````
 
 ---
 
-## ▶️ Usage
+## 💻 Usage
 
-### Development
-
-```bash
-npm run dev
-```
-
-### Production
+### Run the development server
 
 ```bash
-npm run build
-npm start
+pnpm dev
+```
+
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Build for production
+
+```bash
+pnpm build
+pnpm start
 ```
 
 ---
 
-## 📦 Dependencies
+## 🧪 Linting
 
-### Runtime
+```bash
+pnpm lint
+```
 
-* `next@15.3.2`
-* `react@19.0.0`
-* `react-dom@19.0.0`
-* `tailwind-merge`
-* `@radix-ui/react-*`
-* `lucide-react`
-* `clsx`
-* `class-variance-authority`
-* `react-icons`
-
-### Dev Dependencies
-
-* `eslint`, `eslint-config-next`, `@eslint/eslintrc`
-* `tailwindcss`, `@tailwindcss/postcss`, `tw-animate-css`
-* `typescript`
-* `@types/*`
-
----
-
-## ⚙️ Configuration
-
-* **Tailwind CSS**: Configured via PostCSS and utility classes.
-* **ESLint**: Configured with Next.js' ESLint config.
-* **TypeScript**: Enabled with strict types.
-
----
-
-## 📌 Examples
-
-### Fetching News
+To ignore ESLint errors during production build:
 
 ```ts
-import { fetchNews } from "@/lib/fetchNews";
-
-const news = await fetchNews("technology");
-```
-
-### Shared Components Usage
-
-```tsx
-import Navbar from "@/components/shared/Navbar";
-import NewsCard from "@/components/shared/NewsCard";
+// inside next.config.ts
+eslint: {
+  ignoreDuringBuilds: true,
+}
 ```
 
 ---
 
-## 🧰 Troubleshooting
+## 🔗 Remote Images
 
-* Ensure you're using Node.js version 18 or later.
-* If Tailwind styles aren't loading, verify that `globals.css` is imported correctly.
-* If `next dev` fails, try deleting `.next` and reinstalling dependencies:
+Supports loading from:
 
-```bash
-rm -rf .next
-npm install
-```
+* `https://images.unsplash.com/**`
+* `https://www.themealdb.com/**`
+
+Configured in `next.config.ts`.
 
 ---
 
-## 👥 Contributors
+## 🧱 UI Libraries
 
-* **Your Name** – [your-email@example.com](mailto:your-email@example.com)
-
-> Want to contribute? Open an issue or submit a PR!
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+* `@radix-ui/react-*` — Accessible components
+* `lucide-react` — Icon system
+* `clsx`, `class-variance-authority` — Utility class merging
+* `tailwind-merge` — Prevent class conflicts
+* `tw-animate-css` — Built-in animation support
 
 ---
 
-```
+## 👨‍💻 Author
+
+**Abdul Mazid Akash**
+📧 [Email Me](mailto:your-email@example.com)
+🌐 [Portfolio Website](https://yourportfolio.com)
+🐱 [GitHub](https://github.com/your-username)
 
 ---
 
-```
+## 📜 License
+
+MIT License. Feel free to use and modify this project as you like.
+
+
