@@ -1,36 +1,185 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+---
 
-First, run the development server:
+```markdown
+# Next News Portal
+
+A modern, responsive news portal built with **Next.js**, **React 19**, **Tailwind CSS**, and **Radix UI**. This portal provides a structured layout with reusable components for presenting and navigating news content.
+
+---
+
+## 📑 Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Folder Structure](#folder-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Dependencies](#dependencies)
+- [Configuration](#configuration)
+- [Examples](#examples)
+- [Troubleshooting](#troubleshooting)
+- [Contributors](#contributors)
+- [License](#license)
+
+---
+
+## 📘 Introduction
+
+The **Next News Portal** is designed to be a scalable and customizable news publishing platform using the latest frontend technologies. It leverages server-side rendering and API routes from Next.js for efficient and fast content delivery.
+
+---
+
+## 🚀 Features
+
+- ⚡ Built with **Next.js 15**
+- 💄 UI powered by **Tailwind CSS** and **Radix UI**
+- 🔄 Server-side rendering and routing
+- 🧩 Modular component-based architecture
+- 📱 Responsive and mobile-friendly layout
+- 📰 News fetching logic with `fetchNews.ts`
+
+---
+
+## 📁 Folder Structure
+
+```
+
+src/
+├── app/
+│   ├── about/
+│   ├── contact/
+│   └── news/
+├── assets/                 # Static assets
+├── components/
+│   ├── news/
+│   └── shared/
+│       ├── Banner.tsx
+│       ├── Footer.tsx
+│       ├── MobileMenu.tsx
+│       ├── Navbar.tsx
+│       ├── NewsCard.tsx
+│       └── NewsLetter.tsx
+├── context/               # React context logic
+├── lib/
+│   └── fetchNews.ts       # News fetching utility
+├── ui/                    # UI components
+├── layout.tsx
+├── page.tsx
+├── globals.css
+
+````
+
+---
+
+## 🛠️ Installation
+
+Ensure you have **Node.js >= 18** installed.
+
+```bash
+git clone https://github.com/your-username/next-news-portal.git
+cd next-news-portal
+npm install
+````
+
+---
+
+## ▶️ Usage
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📦 Dependencies
 
-To learn more about Next.js, take a look at the following resources:
+### Runtime
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* `next@15.3.2`
+* `react@19.0.0`
+* `react-dom@19.0.0`
+* `tailwind-merge`
+* `@radix-ui/react-*`
+* `lucide-react`
+* `clsx`
+* `class-variance-authority`
+* `react-icons`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Dev Dependencies
 
-## Deploy on Vercel
+* `eslint`, `eslint-config-next`, `@eslint/eslintrc`
+* `tailwindcss`, `@tailwindcss/postcss`, `tw-animate-css`
+* `typescript`
+* `@types/*`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⚙️ Configuration
+
+* **Tailwind CSS**: Configured via PostCSS and utility classes.
+* **ESLint**: Configured with Next.js' ESLint config.
+* **TypeScript**: Enabled with strict types.
+
+---
+
+## 📌 Examples
+
+### Fetching News
+
+```ts
+import { fetchNews } from "@/lib/fetchNews";
+
+const news = await fetchNews("technology");
+```
+
+### Shared Components Usage
+
+```tsx
+import Navbar from "@/components/shared/Navbar";
+import NewsCard from "@/components/shared/NewsCard";
+```
+
+---
+
+## 🧰 Troubleshooting
+
+* Ensure you're using Node.js version 18 or later.
+* If Tailwind styles aren't loading, verify that `globals.css` is imported correctly.
+* If `next dev` fails, try deleting `.next` and reinstalling dependencies:
+
+```bash
+rm -rf .next
+npm install
+```
+
+---
+
+## 👥 Contributors
+
+* **Your Name** – [your-email@example.com](mailto:your-email@example.com)
+
+> Want to contribute? Open an issue or submit a PR!
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+---
+
+```
+
+---
+
+```
