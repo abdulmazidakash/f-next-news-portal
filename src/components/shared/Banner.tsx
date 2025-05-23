@@ -6,11 +6,11 @@ import banner from '@/assets/next-js-banner.jpg'
 const Banner = () => {
   return (
 	<div>
-		<div className='bg-slate-100'>
+		<div className='bg-slate-100 dark:bg-gray-800 dark:text-white rounded-md'>
 			<div className='px-4 py-8 lg:px-8 grid grid-cols-1 md:grid-cols-2 items-center gap-8'>
 				{/* image  */}
 			<div>
-				<Image src={banner} alt='banner' />
+				<Image src={banner} alt='banner' className='rounded-md' />
 			</div>
 			<div className='space-y-4 flex flex-col'>
 				<h4 className='text-sm font-medium text-gray-500'>Technologies</h4>

@@ -6,12 +6,14 @@ interface CategoryChangeProps {
 }
 
 const CategoryFilter = ({onCategoryChange}: CategoryChangeProps) => {
-	const categories = ['Beef', 'Chicken', 'Dessert', 'Lamb', 'Miscellaneous', 'Pork', 'Seafood', 'Side', 'Starter', 'Vegan', 'Vegetarian'];
+	const categories = ["all", "tech", "health", "sports", "business"];
   return (
 	<div className='flex gap-2 items-center justify-center mx-4'>
 		<h3 className='font-bold text-lg mb-2 flex-shrink-0'>Filter by Category:</h3>
 		<Select
-		onValueChange={(value) => onCategoryChange(value === 'Beef' ? '' : value)}
+		onValueChange={(value) =>
+          onCategoryChange(value === "all" ? "" : value)
+        }
 		>
 			<SelectTrigger className="w-[180px] capitalize rounded-md">
 				<SelectValue placeholder="select category" />

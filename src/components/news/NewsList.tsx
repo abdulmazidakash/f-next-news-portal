@@ -7,7 +7,7 @@ import SearchBar from './SearchBar';
 import CategoryFilter from './CategoryFilter';
 
 function NewsList() {
-	const [news, setNews] = useState<NewsItem[]>([]);;
+	const [news, setNews] = useState<NewsItem[]>([]);
 	const [search, setSearch] = useState<string>('');
 	const [category, setCategory] = useState<string>('');
 
@@ -28,8 +28,8 @@ function NewsList() {
 			<CategoryFilter onCategoryChange={setCategory}/>
 		</div>
 		<div className='grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6 justify-between'>
-			{news.map((item)=>
-				(<NewsCard key={item?.idCategory} item={item}/>)
+			{news.map((item, index)=>
+		  <NewsCard key={item?._id || index} item={item} />
 			)}
 		</div>
 	</div>
