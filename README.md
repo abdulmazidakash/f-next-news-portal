@@ -1,7 +1,7 @@
-### ✅ `README.md`
-
-```md
 # 📰 Next News Portal
+
+<!-- ![Next News Portal Banner](https://your-image-url.com/banner.png) -->
+![alt text](image.png)
 
 A modern and responsive news portal built with **Next.js 15**, **React 19**, **Tailwind CSS 4**, and **Radix UI**. This project showcases a clean and interactive user interface for delivering breaking news, articles, and more.
 
@@ -21,10 +21,8 @@ A modern and responsive news portal built with **Next.js 15**, **React 19**, **T
 
 ## 📂 Folder Structure (Example)
 
-```
-
+```bash
 next-news-portal/
-│
 ├── components/        # Reusable UI components
 ├── pages/             # Next.js pages (routes)
 ├── public/            # Static files
@@ -34,21 +32,20 @@ next-news-portal/
 ├── eslint.config.mjs  # ESLint configuration
 ├── next.config.ts     # Next.js configuration
 └── tailwind.config.ts # TailwindCSS configuration
-
-````
+```
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Name                      | Description                                      |
-| ------------------------- | ------------------------------------------------ |
-| **Next.js 15**            | React framework for production apps             |
-| **React 19**              | Core UI library                                 |
-| **Tailwind CSS 4**        | Utility-first CSS framework                     |
-| **Radix UI**              | Accessible, composable UI primitives            |
-| **Lucide Icons**          | Icon set built for React                        |
-| **ESLint + TypeScript**   | Code quality and type safety                    |
+| Name                    | Description                              |
+| ----------------------- | ---------------------------------------- |
+| **Next.js 15**          | React framework for production apps      |
+| **React 19**            | Core UI library                          |
+| **Tailwind CSS 4**      | Utility-first CSS framework              |
+| **Radix UI**            | Accessible, composable UI primitives     |
+| **Lucide Icons**        | Icon set built for React                 |
+| **ESLint + TypeScript** | Code quality and type safety             |
 
 ---
 
@@ -57,16 +54,15 @@ next-news-portal/
 Make sure you have **Node.js (v18 or higher)** and **pnpm / npm / yarn** installed.
 
 ```bash
-git clone https://github.com/your-username/next-news-portal.git
-cd next-news-portal
-pnpm install # or npm install or yarn
-````
-
+git https://github.com/abdulmazidakash/f-next-news-portal
+cd f-next-news-portal
+pnpm install # or npm install / yarn install
+# -----------------------------
 ---
 
 ## 💻 Usage
 
-### Run the development server
+### Start the development server
 
 ```bash
 pnpm dev
@@ -85,14 +81,15 @@ pnpm start
 
 ## 🧪 Linting
 
+To check for linting issues:
+
 ```bash
 pnpm lint
 ```
 
-To ignore ESLint errors during production build:
+To ignore ESLint errors during production build, add the following to your `next.config.ts`:
 
 ```ts
-// inside next.config.ts
 eslint: {
   ignoreDuringBuilds: true,
 }
@@ -100,38 +97,33 @@ eslint: {
 
 ---
 
-## 🔗 Remote Images
+## 🔗 Remote Image Support
 
-Supports loading from:
+This project allows image loading from remote sources:
 
 * `https://images.unsplash.com/**`
 * `https://www.themealdb.com/**`
 
-Configured in `next.config.ts`.
+Configured via `next.config.ts`.
 
 ---
 
 ## 🧱 UI Libraries
 
-* `@radix-ui/react-*` — Accessible components
-* `lucide-react` — Icon system
+* `@radix-ui/react-*` — Accessible UI primitives
+* `lucide-react` — Icon system for React
 * `clsx`, `class-variance-authority` — Utility class merging
 * `tailwind-merge` — Prevent class conflicts
-* `tw-animate-css` — Built-in animation support
+* `tw-animate-css` — CSS animation utilities for Tailwind
 
 ---
 
 ## 👨‍💻 Author
 
 **Abdul Mazid Akash**
-📧 [Email Me](mailto:your-email@example.com)
-🌐 [Portfolio Website](https://yourportfolio.com)
-🐱 [GitHub](https://github.com/your-username)
+📧 [Email Me](akashabdulmazid.com)
+🌐 [Portfolio Website](https://abdulmazidakash.netlify.app)
+🐱 [GitHub](https://github.com/abdulmazidakash)
 
 ---
-
-## 📜 License
-
-MIT License. Feel free to use and modify this project as you like.
-
 
