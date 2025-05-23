@@ -20,7 +20,7 @@ const NewsCard = ({ item }: NewsCardProps) => {
         />
       </Link>
 	  <div>
-		<h2 className="text-xl font-semibold my-3">{item?.title}</h2>
+		<h2 className="text-xl font-semibold my-3">{item?.title.substring(0,20)}...</h2>
           <p className='text-justify mb-2'>{item?.description?.substring(0, 200)}...</p>
           <Link href={`/news/${item?._id}`}>
             <Button variant={'default'}>Read More</Button>

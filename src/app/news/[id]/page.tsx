@@ -12,14 +12,12 @@ export async function generateStaticParams() {
   return news.map((item) => ({
     id: String(item?._id),
   }));
-};
+}
 
 const NewsDetailspage = async ({ params }: { params: { id: string } }) => {
   const post = await fetch(
     `https://news-api-next-js-chi.vercel.app/api/news/${params.id}`
   ).then((res) => res.json());
-
-  console.log('news details page--->',post);
 
   if (!post) {
     return <div>News is Not Found!</div>;
